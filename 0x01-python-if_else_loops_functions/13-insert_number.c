@@ -1,5 +1,6 @@
+#include <stdlib.h>
 #include "lists.h"
-#include "stdlib.h"
+
 /**
  * *insert_node - insert a number into a sorted singly linked list.
  * @head: head node of linkedlist.
