@@ -12,4 +12,7 @@ if number >= 0:
         print("{} and is less than 6 and not 0".format(lastnum))
 elif number < 0:
     negnum = (((number * -1) % 10)*-1)
-    print("{} and is less than 6 and not 0".format(negnum))
+    if negnum == 0:
+        print("{} and is 0".format(negnum))
+    else:
+        print("{} and is less than 6 and not 0".format(negnum))
