@@ -1,26 +1,12 @@
 #!/usr/bin/python3
+"""creating a square class"""
+
+
 class Square():
+    """class"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
-        if not isinstance(size, int):
-            print("size must be an integer")
-            raise TypeError
-        elif size < 0:
-            print("size must be >= 0")
-            raise ValueError
-        if not isinstance(position, tuple):
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
-        if len(position) != 2:
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
-        if type(position[0]) is not int or type(position[1]) is not int:
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
-        if position[0] < 0 or position[1] < 0:
-            print("position must be a tuple of 2 positive integers")
-            raise TypeError
 
     @property
     def size(self):
@@ -64,8 +50,7 @@ class Square():
                 print()
         for i in range(self.__size):
             print(" " * self.__position[0], end="")
-            for j in range(self.__size):
-                print("#", end="")
+            print("#" * self.__size, end="")
             print()
 
     def area(self):
