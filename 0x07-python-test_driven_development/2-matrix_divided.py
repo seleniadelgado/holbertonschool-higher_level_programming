@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def matrix_divided(matrix, div):
     new_matrix = []
     if type(matrix) is not list:
