@@ -1,0 +1,15 @@
+Prints a name
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("angie", "delgado")
+    My name is angie delgado
+    >>> say_my_name(5, "delgado")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+    >>> say_my_name("angie", 5)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+    >>> say_my_name("angie")
+    My name is angie 
+    >>> say_my_name(4)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

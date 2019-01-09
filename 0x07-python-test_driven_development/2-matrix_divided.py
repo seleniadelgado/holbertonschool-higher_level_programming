@@ -5,12 +5,11 @@ def matrix_divided(matrix, div):
         for box in matrix:
             if type(box) is not list:
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-                if all(isinstance(lemons, (int, float)) for lemons in box):
-                    raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     if len(matrix) > 1:
         row = len(matrix[0])
-        if all(len(rows) is not row for rows in matrix):
-            raise TypeError ("each row of the matrix must have the same size")
+        for rows in matrix:
+            if len(rows) is not row:
+                raise TypeError ("each row of the matrix must have the same size")
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
     if div == 0:
@@ -18,6 +17,8 @@ def matrix_divided(matrix, div):
     for a in matrix:
         littlelist = []
         for b in a:
+            if type(b) is not int and type(b) is not float:
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
             result = b / div
             result = round(result, 2)
             littlelist.append(result)

@@ -2,6 +2,7 @@
 def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
+    text = text.lstrip()
     i = 0
     while i < (len(text)):
         print(text[i], end="")
