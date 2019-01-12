@@ -6,7 +6,7 @@ def matrix_divided(matrix, div):
         for box in matrix:
             if type(box) is not list:
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-       if len(matrix) > 1:
+    if len(matrix) > 1:
         row = len(matrix[0])
         for rows in matrix:
             if len(rows) is not row:
