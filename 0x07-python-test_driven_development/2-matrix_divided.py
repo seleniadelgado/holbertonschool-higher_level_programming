@@ -2,7 +2,7 @@
 def matrix_divided(matrix, div):
     new_matrix = []
     c = "matrix must be a matrix (list of lists) of integers/floats"
-    d = "each row of the matrix must have the same size"
+    d = "Each row of the matrix must have the same size"
     if type(matrix) is not list:
         raise TypeError(c)
         for box in matrix:
