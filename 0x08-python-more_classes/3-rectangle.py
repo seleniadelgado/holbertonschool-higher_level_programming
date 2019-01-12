@@ -53,10 +53,12 @@ class Rectangle:
         """defining perimeter of rectangle"""
         if self.__height == 0 or self.__width == 0:
             return 0
-        return 2 * (self.__height + self.width)
+        return 2 * (self.__height + self.__width)
 
     def __str__(self):
         """defining str to print # in rectangle"""
+        if self.__height == 0 or self.__width == 0:
+            return ""
         s = ""
         s = s.join((self.__height - 1) * (s + '#' * self.__width + "\n"))
         s += '#' * self.__width
