@@ -3,7 +3,6 @@ def matrix_divided(matrix, div):
     new_matrix = []
     c = "matrix must be a matrix (list of lists) of integers/floats"
     d = "each row of the matrix must have the same size"
-    e = "matrix must be a matrix (array of arrays of integers/floats)"
     if type(matrix) is not list:
         raise TypeError(c)
         for box in matrix:
@@ -22,7 +21,7 @@ def matrix_divided(matrix, div):
         littlelist = []
         for b in a:
             if type(b) is not int and type(b) is not float:
-                raise TypeError(e)
+                raise TypeError(c)
             result = b / div
             result = round(result, 2)
             littlelist.append(result)
