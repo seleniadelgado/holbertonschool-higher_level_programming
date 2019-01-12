@@ -26,4 +26,4 @@ def matrix_divided(matrix, div):
             result = round(result, 2)
             littlelist.append(result)
         new_matrix.append(littlelist)
-    return (new_matrix)
+    return new_matrix
