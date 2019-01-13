@@ -9,7 +9,10 @@ Prints a name
     Traceback (most recent call last):
     TypeError: last_name must be a string
     >>> say_my_name("angie")
-    My name is angie 
+    My name is angie
     >>> say_my_name(4)
     Traceback (most recent call last):
     TypeError: first_name must be a string
+    >>> say_my_name()
+    Traceback: (most recent call last):
+    TypeError: TypeError: print_square() missing 1 required positional argument: 'size'
