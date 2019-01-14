@@ -25,11 +25,11 @@ class TestMaxInteger(unittest.TestCase):
 
     def text_max_integer(self):
         """test for if "one negative number in the list" exists"""
-        self.assertEqual(max_integer([-1, -2, -3]), -1)
+        self.assertEqual(max_integer([2, -1]), 2)
 
     def test_max_integer(self):
         """test for only negative numbers in the list"""
-        self.assertEqual(max_integer([-1, -4, -9]), -1)
+        self.assertEqual(max_integer([-2, -4, -9]), -2)
 
     def test_max_integer(self):
         """test for only one element in list"""
