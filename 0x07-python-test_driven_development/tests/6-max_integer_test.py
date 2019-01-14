@@ -21,7 +21,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def text_max_integer(self):
         """test if biggest number is in the middle"""
-        self.assertEqual(max_integer([0, float("inf"), 8]), float("inf"))
+        self.assertEqual(max_integer([0, float("inf"), 0]), float("inf"))
 
     def text_max_integer(self):
         """test for if "one negative number in the list" exists"""
@@ -33,7 +33,7 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_max_integer(self):
         """test for only one element in list"""
-        self.assertEqual(max_integer([float("inf")]), float("inf"))
+        self.assertEqual(max_integer([5]), 5)
 
 if __name__ == '__main__':
     unittest.main()
