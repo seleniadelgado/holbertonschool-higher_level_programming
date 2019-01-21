@@ -1,14 +1,16 @@
 #!/usr/bin/python3
+"""a class that defines student"""
 
 
-def __init__(self, first_name, last_name, age):
-        """defines attributes"""
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
+class Student ():
 
+    def __init__(self, first_name, last_name, age):
+            """defines attributes"""
+            self.first_name = first_name
+            self.last_name = last_name
+            self.age = age
 
-def to_json(self, attrs=None):
+    def to_json(self, attrs=None):
         if type(attrs) is list:
             dict = {}
             for i in attrs:
@@ -18,5 +20,8 @@ def to_json(self, attrs=None):
         else:
             return self.__dict__
 
-
-def reload_from_json(self, json):
+    def reload_from_json(self, json):
+        # jlist = list(json.keys())
+        # for key in jlist:
+        for key in self.__dict__:
+            self.__dict__[key] = json[key]
