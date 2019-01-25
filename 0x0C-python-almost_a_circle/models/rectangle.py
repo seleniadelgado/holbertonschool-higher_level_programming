@@ -87,9 +87,9 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
-        print("\n" * self.__y, end= "")
+        print("\n" * self.__y, end="")
         for i in range(self.__height):
-            print(" " * self.__x, end= "")
+            print(" " * self.__x, end="")
             for j in range(self.__width):
                 print("#", end="")
             print()
@@ -121,3 +121,7 @@ class Rectangle(Base):
                     self.__x = value
                 if key is "y":
                     self.__y = value
+
+    def to_dictionary(self):
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
