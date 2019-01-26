@@ -52,10 +52,11 @@ class Base():
            instances"""
         list_instances = []
         if not "{}.json".format(cls.__name__):
-            return empty_list
-        for i in cls._obj:
-            
-
-
-
-        return Base.from_json_string(created)
+            return list_instances
+        jstring = cls.__name__ + ".json"
+        with open (jstring, "r", encoding="utf-8") as jfile:
+            rfile = jfile.read()
+            list_dict = Base.from_json_string(rfile)
+        for i in list_dict:
+            list_instances.append(cls.create(**i))
+        return list_instances
