@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 import json
 
+
 class Base():
-    """base called class"""
+    """Class called base with different methods that have an effect on
+    subclasses when called."""
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """defining a class called Base"""
+        """defining a cls constructor with private cls attribute. (Task 1)"""
         if id is not None:
             self.id = id
         else:
@@ -16,14 +18,14 @@ class Base():
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """return the json representation of list_dictionaries."""
+        """return the json representation of list_dictionaries. (Task 15)"""
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
+        """writes the JSON str rep of list_objs to a file. (Task 16)"""
         dictobj_list = []
         for obj in list_objs:
             dictobj_list.append(obj.to_dictionary())
@@ -33,7 +35,7 @@ class Base():
 
     @staticmethod
     def from_json_string(json_string):
-        """returns the list of the JSON string representation json_string"""
+        """returns the list of the JSON str rep of json_string. (Task 17)"""
         empty_list = []
         if json_string is None or not json_string:
             return empty_list
@@ -41,20 +43,21 @@ class Base():
 
     @classmethod
     def create(cls, **dictionary):
-        """returns an instance with all attributes already set"""
+        """returns an instance with all attributes already set with "dummy"
+        instances. (Task 18)"""
         dummy1 = cls(1, 2, 3)
         dummy1.update(**dictionary)
         return dummy1
 
     @classmethod
     def load_from_file(cls):
-        """Updates Base class by adding the class method that returns a list of
-           instances"""
+        """Updates Base class by adding a class method which returns a list of
+           instances. (Task 19)"""
         list_instances = []
         if not "{}.json".format(cls.__name__):
             return list_instances
         jstring = cls.__name__ + ".json"
-        with open (jstring, "r", encoding="utf-8") as jfile:
+        with open(jstring, "r", encoding="utf-8") as jfile:
             rfile = jfile.read()
             list_dict = Base.from_json_string(rfile)
         for i in list_dict:
