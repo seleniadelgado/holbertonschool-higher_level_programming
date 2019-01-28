@@ -4,6 +4,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
+    """class of Rectangle that inherits from base"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """defining private instance attributes, each with its own publis getter
