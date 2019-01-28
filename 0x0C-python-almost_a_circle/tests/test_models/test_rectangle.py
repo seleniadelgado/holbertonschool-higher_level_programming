@@ -137,7 +137,7 @@ class TestBase(unittest.TestCase):
         """testing for when 2 is passed for id"""
         Rct = Rectangle(1, 2, 3, 4)
         Rct.update(hello=2)
-        self.assertTrue(Rct.id == 2)
+        self.assertFalse(Rct.id == 2)
 
 
 if __name__ == '__main__':

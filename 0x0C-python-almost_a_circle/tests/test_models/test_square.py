@@ -10,12 +10,12 @@ class TestBase(unittest.TestCase):
     def test_correct_values_input(self):
         """test for four correct inputs for each instance"""
         Sq = Square(10, 10, 5, 5)
-        self.assertEqual((Sq.width, Sq.height, Sq.x, Sq.y), (10, 10, 5, 5))
+        self.assertEqual((Sq.size, Sq.x, Sq.y, Sq.id), (10, 10, 5, 5))
 
     def test_two_values_input(self):
         """test for if an input has only two values"""
-        Sq = Square(10, 10)
-        self.assertEqual((Sq.width, Sq.height, Sq.x, Sq.y), (10, 10, 0, 0))
+        Sq = Square(10, 10, 0, 0)
+        self.assertEqual((Sq.size, Sq.x, Sq.y, Sq.id), (10, 10, 0, 0))
 
     def test_type_one_input(self):
         """test for if input has no value"""
@@ -30,7 +30,7 @@ class TestBase(unittest.TestCase):
     def test_type_str(self):
         """test for str being passed in"""
         with self.assertRaises(TypeError):
-            Sq = Square(10, 10, 5, "brasil")
+            Sq = Square(10, 10, "brasil", 5)
 
     def test_type_tuple(self):
         """test for tuples being passed in"""
@@ -90,7 +90,7 @@ class TestBase(unittest.TestCase):
     def test_display_height_type(self):
         """testing for value error"""
         with self.assertRaises(ValueError):
-            Sq = Square(5, 0, 2, 1)
+            Sq = Square(5, -4, 2, 1)
 
     def test_update(self):
         """testing for true to update id to 4"""
@@ -100,15 +100,15 @@ class TestBase(unittest.TestCase):
 
     def test_update_width(self):
         """testing for true to update width to 3"""
-        Sq = Sq(1, 1, 1, 1)
-        Rct.update(width=3)
-        self.assertTrue(Sq.width == 3)
+        Sq = Square(1, 1, 1, 1)
+        Sq.update(width=3)
+        self.assertFalse(Sq.width == 3)
 
     def test_update_height(self):
         """testing for true for height == 3"""
         Sq = Square(1, 1, 1, 1)
         Sq.update(height=3)
-        self.assertTrue(Sq.height == 3)
+        self.assertFalse(Sq.height == 3)
 
     def test_update_x(self):
         """testing for true for x to == 3"""
@@ -125,15 +125,8 @@ class TestBase(unittest.TestCase):
     def test_update_str(self):
         """testing for true that  y = string"""
         Sq = Square(1, 2, 3, 4)
-        Sq.update(y="orange")
-        self.assertTrue(Sq.y == "orange")
-
-    def test_update_Kwargs(self):
-        """testing for kwargs to change keyword id"""
-        Sq = Rectangle(1, 2, 3, 4)
-        Sq.update(hello=2)
-        self.assertTrue(Sq.id == 2)
-
+        with self.assertRaises(TypeError):
+            Sq.update(y="orange")
 
 if __name__ == '__main__':
     unittest.main()
