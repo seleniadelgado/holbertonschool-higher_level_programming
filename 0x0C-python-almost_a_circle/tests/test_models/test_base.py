@@ -4,8 +4,8 @@
 import unittest
 from models.base import Base
 
-class TestBase(unittest.TestCase):
 
+class TestBase(unittest.TestCase):
 
     def test_empty_id(self):
         """test for an id = none"""
