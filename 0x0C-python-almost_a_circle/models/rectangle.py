@@ -8,10 +8,6 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """defining private instance attributes, each with its own publis getter
         and setter. (Task 2, 3)"""
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -32,7 +28,7 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
-        self.__Rect_id = super().__init__(id)
+        super().__init__(id)
 
     @property
     def width(self):
