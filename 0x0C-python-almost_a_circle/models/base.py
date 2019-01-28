@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""base class"""
 import json
 
 
@@ -30,7 +31,7 @@ class Base():
         for obj in list_objs:
             dictobj_list.append(obj.to_dictionary())
         strobj = Base.to_json_string(dictobj_list)
-        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+        with open("{}.json".format(cls.__name__), "w+", encoding="utf-8") as f:
             f.write(strobj)
 
     @staticmethod
@@ -54,12 +55,13 @@ class Base():
         """Updates Base class by adding a class method which returns a list of
            instances. (Task 19)"""
         list_instances = []
-        if not "{}.json".format(cls.__name__):
-            return list_instances
-        jstring = cls.__name__ + ".json"
-        with open(jstring, "r", encoding="utf-8") as jfile:
-            rfile = jfile.read()
+        try:
+            jstring = cls.__name__ + ".json"
+            with open(jstring, "r", encoding="utf-8") as jfile:
+                rfile = jfile.read()
             list_dict = Base.from_json_string(rfile)
-        for i in list_dict:
-            list_instances.append(cls.create(**i))
-        return list_instances
+            for i in list_dict:
+                list_instances.append(cls.create(**i))
+            return list_instances
+        except FileNotFoundError:
+            return list_instances
