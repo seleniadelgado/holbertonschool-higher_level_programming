@@ -1,0 +1,1 @@
+-- script that lists all shows without the genre Comedy
