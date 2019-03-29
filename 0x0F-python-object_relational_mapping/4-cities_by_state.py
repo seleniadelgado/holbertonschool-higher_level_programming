@@ -12,7 +12,9 @@ if __name__ == "__main__":
         user=sys.argv[1],
         passwd=sys.argv[2])
     cur = connect.cursor()
-    cur.execute('SELECT * FROM cities ORDER BY cities.id ASC')
+    cmd = "SELECT cities.id, cities.name, states.name FROM cities, states\
+    WHERE cities.state_id = states.id ORDER BY cities.id ASC"
+    cur.execute(cmd)
     rows = cur.fetchall()
     for row in rows:
         print(row)
