@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""list of all states"""
+"""filter states that start with n"""
 import MySQLdb
 import sys
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
         user=sys.argv[1],
         passwd=sys.argv[2])
 cur = connect.cursor()
-cur.execute('SELECT * FROM states ORDER BY states.id ASC')
+cur.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY states.id ASC')
 rows = cur.fetchall()
 for row in rows:
     print(row)
