@@ -11,10 +11,10 @@ if __name__ == "__main__":
         database=sys.argv[3],
         user=sys.argv[1],
         passwd=sys.argv[2])
-cur = connect.cursor()
-cur.execute('SELECT * FROM states ORDER BY states.id ASC')
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-cur.close()
-connect.close()
+    cur = connect.cursor()
+    cur.execute('SELECT * FROM states ORDER BY states.id ASC')
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    connect.close()
