@@ -13,7 +13,7 @@ if __name__ == "__main__":
         passwd=sys.argv[2])
     cur = connect.cursor()
     cur.execute('SELECT * FROM states\
-                WHERE name LIKE "N%" ORDER BY states.id ASC')
+                WHERE name LIKE "N%" COLLATE utf8_bin ORDER BY states.id ASC')
     rows = cur.fetchall()
     for row in rows:
         print(row)
