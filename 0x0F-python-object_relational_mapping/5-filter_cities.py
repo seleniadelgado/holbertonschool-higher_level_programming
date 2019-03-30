@@ -13,12 +13,17 @@ if __name__ == "__main__":
         passwd=sys.argv[2])
     state = sys.argv[4]
     cur = connect.cursor()
-    cmd = 'SELECT cities.name FROM cities INNER JOIN states\
-    ON states.id = cities.state_id WHERE Bynary state.name = %s\
-    ORDER BY cities.id'
+    cmd = "SELECT cities.name\
+    FROM cities INNER JOIN states \
+    ON states.id = cities.state_id \
+    WHERE states.name = %s \
+    ORDER BY cities.id ASC"
     cur.execute(cmd, (state,))
     rows = cur.fetchall()
+    citylist = []
     for row in rows:
-        print(row)
+        citylist.append(row[0])
+    print(', '.join(citylist), end="")
+    print()
     cur.close()
     connect.close()
