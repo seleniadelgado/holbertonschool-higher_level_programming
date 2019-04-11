@@ -1,3 +1,3 @@
 #!/bin/bash
 # sends GET request and displays the body of the response.
-curl -L -XGET "S1" -s
+curl -s -L -XGET "S1"
