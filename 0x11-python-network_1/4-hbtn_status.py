@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-import urllib.request
-from sys import argv
+import requests
 """Takes URL and prints out response"""
-
 if __name__ == "__main__":
-    with urllib.request.urlopen("https://intranet.hbtn.io/status") as a:
-        a = a.read()
-        print("Body response:")
-        print("\t- type: {}".format(type(a)))
-        print("\t- content: {}".format(a.decode("utf8")))
+    a = requests.get('https://intranet.hbtn.io/status')
+    p = a.text
+    print("Body response:")
+    print("\t- type: {}".format(type(p)))
+    print("\t- content: {}".format(p))
