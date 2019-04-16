@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """takes in URL, sends a request to the URL and displays
-the body of response"""
+the body of response
+"""
 import requests
 from sys import argv
 
 if __name__ == "__main__":
-    url = request.get(argv[1])
+    url = requests.get(argv[1])
     if url.status_code >= 400:
         print("Error code: {}".format(url.status_code))
     else:
