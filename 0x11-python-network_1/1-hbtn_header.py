@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-"""takes URL and Email sends POST request to URL with email as parameter"""
 import urllib.request
-import urllib.parse
 from sys import argv
-
+"""Take in a URL, send a request, and display the val of X-Request-Id"""
 if __name__ == "__main__":
-    url = argv[1]
-    values = {'email': argv[2]}
-    data = urllib.parse.urlencode(values)
-    data = data.encode('ascii')
-    req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as response:
-        the_page = response.read()
-        print("your email is: {}".format(the_page.decode("utf8")))
+    url = urllib.request.Request(argv[1])
+    with urllib.request.urlopen(url) as response:
+        info_dict = dict(response.info())
+        value = info_dict.get('X-Request-Id')
+        print("{}".format(value))
