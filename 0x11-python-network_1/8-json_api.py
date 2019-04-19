@@ -11,7 +11,7 @@ if __name__ == "__main__":
     r = requests.post('http://0.0.0.0:5000/search_user', values)
     try:
         dict_1 = r.json()
-    except Exception:
+    except ValueError:
         print("Not a valid JSON")
     if len(dict_1) == 0:
         print("No result")
