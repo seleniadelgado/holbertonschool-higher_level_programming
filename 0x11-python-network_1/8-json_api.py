@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""python script that takes in a letter and sends a POST with letter as pam"""
+"""python script that takes in a letter and sends a POST with letter as param"""
 import requests
 from sys import argv
 
