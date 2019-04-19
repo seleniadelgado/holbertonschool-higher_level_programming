@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """python script that takes in a letter and sends a POST with letter as parm"""
-1
 import requests
 from sys import argv
 
