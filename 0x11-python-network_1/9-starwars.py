@@ -9,4 +9,4 @@ if __name__ == "__main__":
     search = u.json()
     print("Number of results: {}".format(search['count']))
     for person in search['results']:
-        print("{}".format(person ['name']))
+        print("{}".format(person['name']))
