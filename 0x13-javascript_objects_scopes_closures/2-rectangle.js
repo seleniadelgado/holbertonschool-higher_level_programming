@@ -1,12 +1,12 @@
 #!/usr/bin/node
 module.exports = class Rectangle {
   constructor (w, h) {
-    if (w <= 0 || h <= 0) {
-	var myObj = {};
-  } else {
-	this.width = w;
-	this.height = h;
-}
-}
+    if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) {
+      let myobj = {};
+    } else {
+      this.width = w;
+      this.height = h;
+    }
+  }
 }
 ;
