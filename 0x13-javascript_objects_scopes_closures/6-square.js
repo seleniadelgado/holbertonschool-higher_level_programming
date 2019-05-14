@@ -4,8 +4,8 @@ module.exports = class Square extends Square1 {
   constructor (size) {
     super(size, size);
   }
-  charPrint(c) {
-    if (c == null && c == undefined) {
+  charPrint (c) {
+    if (c == null) {
       c = 'X';
     }
     let i;
